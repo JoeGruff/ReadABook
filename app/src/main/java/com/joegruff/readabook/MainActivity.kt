@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             val uri: Uri = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".com.joegruff.readabook.provider", File(parent.getItemAtPosition(position).toString()))
             val target = Intent(Intent.ACTION_VIEW)
             target.setDataAndType(uri, "application/pdf")
-            target.flags = Intent.FLAG_ACTIVITY_NO_HISTORY or FLAG_GRANT_READ_URI_PERMISSION
+            target.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
 
             val intent = Intent.createChooser(target, "Open File")
             try {
